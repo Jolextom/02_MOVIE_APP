@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .container_lg {
-  max-width: 75rem;
+  max-width: 80rem;
   width: 100%;
   padding-inline: 3rem;
   margin: 0 auto;
