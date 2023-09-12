@@ -1,14 +1,15 @@
 import { useState } from "react";
 import "./App.css";
-import Header from "./components/Header";
-import CardGrid from "./components/CardGrid";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import MovieDetails from "./pages/MovieDetails";
 
 function App() {
   return (
-    <>
-      <Header />
-      <CardGrid />
-    </>
+    <Routes>
+      <Route path="/" exact Component={Home} />
+      <Route path="/:id" Component={MovieDetails} />
+    </Routes>
   );
 }
 
