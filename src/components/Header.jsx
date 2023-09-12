@@ -5,7 +5,12 @@ const Header = () => {
   return (
     <>
       <div className="font-DM_Sans text-white">
-        <div className="h-[37.5rem] w-full bg-cover bg-[url('./hero_poster.png')] bg-no-repeat ">
+        <div className="h-[37.5rem] w-full bg-cover bg-no-repeat relative">
+          <img
+            src="./hero_poster.png"
+            className="absolute top-0 -z-10 h-full object-cover"
+            alt="hero-poster"
+          />
           <div className="container_lg h-full">
             <Navbar />
             <div className=" py-[6.5rem] mt-5 flex flex-col w-[25.25rem]">
