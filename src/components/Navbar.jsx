@@ -5,7 +5,9 @@ const Navbar = () => {
     <>
       <div className="flex justify-between items-center pt-4">
         <div className="flex items-center gap-6">
-          <div className="bg-[url('./logo.png')] w-[3.125rem] aspect-square"></div>
+          <div className=" w-[3.125rem] aspect-square">
+            <img src="./logo.png" alt="movie app logo" />
+          </div>
           <h3 className="text-2xl font-bold">MovieBox</h3>
         </div>
         <div className="flex justify-between items-center w-[32rem] h-fit border rounded-md border-[#D1D5DB] py-1.5 px-3 ">
