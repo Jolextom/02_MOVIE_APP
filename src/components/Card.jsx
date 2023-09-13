@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Card = ({
+  id,
   title,
   poster_path,
   release_date,
@@ -8,7 +10,10 @@ const Card = ({
   popularity,
 }) => {
   return (
-    <div className="flex flex-col gap-3 bg-transparent relative">
+    <div
+      data-testid="movie-card"
+      className="flex flex-col gap-3 bg-transparent relative"
+    >
       <div className="absolute top-0 flex p-4 justify-between w-full items-center">
         <h3 className="text-xs text-[#111827] uppercase font-bold bg-[#f3f4f680] rounded-xl px-2 py-1">
           TV Series
@@ -30,25 +35,38 @@ const Card = ({
           </svg>
         </div>
       </div>
-      <img
-        src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-        className="w-[15.625rem]"
-        alt="card-poster"
-      />
-      <h4 className="text-xs text-[#9CA3AF] font-bold">{release_date}</h4>
-      <h3 className="text-lg text-[#111827] font-bold">{title}</h3>
-      <div className="flex justify-between items-center">
-        <div className="flex items-center gap-3">
-          <img src="./IMDB.png" alt="IMDB" />
+      <Link to={`/movies/${id}`}>
+        <img
+          data-testid="movie-poster"
+          src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+          className="w-[15.625rem]"
+          alt="card-poster"
+        />
+        <h4
+          data-testid="movie-release-date"
+          className="text-xs text-[#9CA3AF] font-bold"
+        >
+          {release_date}
+        </h4>
+        <h3
+          data-testid="movie-title"
+          className="text-lg text-[#111827] font-bold"
+        >
+          {title}
+        </h3>
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <img src="./IMDB.png" alt="IMDB" />
 
-          <h4 className="text-xs font-normal">{popularity.toFixed(2)}</h4>
-        </div>
-        <div className="flex items-center gap-3">
-          <img src="./orange.png" alt="ORANGE" />
+            <h4 className="text-xs font-normal">{popularity.toFixed(2)}</h4>
+          </div>
+          <div className="flex items-center gap-3">
+            <img src="./orange.png" alt="ORANGE" />
 
-          <h4 className="text-xs font-normal">{vote_average * 10}%</h4>
+            <h4 className="text-xs font-normal">{vote_average * 10}%</h4>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
