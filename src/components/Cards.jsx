@@ -14,7 +14,7 @@ const Cards = () => {
       const response = await axios.get(
         `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`
       );
-      setTopMovies(response.data.results.slice(0, 20));
+      setTopMovies(response.data.results.slice(0, 10));
       setLoading(false);
     } catch (error) {
       console.error(error);
