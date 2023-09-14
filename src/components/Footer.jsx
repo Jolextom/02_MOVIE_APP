@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="grid place-items-center py-12">
       <div className="flex flex-col gap-9 justify-center text-center">
-        <div className="flex gap-12 w-full justify-center items-center">
+        <div className="flex gap-8 sm:gap-12 w-full justify-center items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -68,12 +68,12 @@ const Footer = () => {
             />
           </svg>
         </div>
-        <ul className="flex text-lg text-[#111827] font-bold gap-12">
+        <ul className="flex flex-col gap-5 sm:flex-row sm:gap-12 text-lg text-[#111827] font-bold ">
           <li>Conditions of Use</li>
           <li>Privacy & Policy</li>
           <li>Press Room</li>
         </ul>
-        <h4 className="text-lg text-[#6B7280] font-bold">
+        <h4 className="text-xs sm:text-base text-[#6B7280] font-bold">
           © 2021 MovieBox by Farinloye Joseph Ayomide
         </h4>
       </div>

@@ -5,16 +5,16 @@ const Navbar = () => {
   return (
     <>
       <div className="flex justify-between items-center pt-4">
-        <div className="flex items-center gap-6">
-          <div className=" w-[3.125rem] aspect-square">
+        <div className="flex items-center gap-5">
+          <div className=" w-[2.2rem] md:w-[3.125rem] aspect-square">
             <img src="./logo.png" alt="movie app logo" />
           </div>
-          <h3 className="text-2xl font-bold">MovieBox</h3>
+          <h3 className="text-lg md:text-2xl font-bold ">MovieBox</h3>
         </div>
         <Search />
 
         <div className="flex items-center gap-6">
-          <h3 className="text-base font-bold">Sign in</h3>
+          <h3 className="text-sm md:text-base font-bold">Sign in</h3>
           <div className="p-2 bg-[#BE123C] rounded-full">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -22,6 +22,7 @@ const Navbar = () => {
               height="24"
               viewBox="0 0 24 24"
               fill="none"
+              className="w-3 h-3 md:w-5 md:h-5"
             >
               <path
                 fill-rule="evenodd"

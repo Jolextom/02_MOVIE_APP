@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
+const apiKey = import.meta.env.VITE_API_KEY;
+import axios from "axios";
 
+// 458156
 const Header = () => {
+  const [movie, setMovie] = useState([]);
+
+  const fetchMovieDetails = async () => {
+    const id = 458156;
+    try {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`
+      );
+      setMovie(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchMovieDetails();
+  }, []);
   return (
     <>
       <div className="font-DM_Sans text-white">
@@ -13,10 +33,10 @@ const Header = () => {
           />
           <div className="container_lg h-full">
             <Navbar />
-            <div className=" py-[6.5rem] mt-5 flex flex-col w-[25.25rem]">
+            <div className=" py-[6.5rem] mt-5 flex flex-col">
               <div className=" space-y-4 w-full">
-                <h1 className="text-5xl leading-[3.5rem] font-bold">
-                  John Wick 3 : Parabellum
+                <h1 className="sm:text-5xl leading-[2.7rem] text-[2.75rem]  font-bold max-w-[26rem]">
+                  {movie.title}
                 </h1>
                 <div className="flex gap-8">
                   <div className="flex items-center gap-3">
@@ -30,11 +50,8 @@ const Header = () => {
                     <h4 className="text-xs font-normal">97%</h4>
                   </div>
                 </div>
-                <p className="text-sm w-[18.875rem]">
-                  John Wick is on the run after killing a member of the
-                  international assassins' guild, and with a $14 million price
-                  tag on his head, he is the target of hit men and women
-                  everywhere.
+                <p className="text-sm max-w-[18.875rem] line-clamp-3">
+                  {movie.overview}
                 </p>
                 <div className="flex items-center w-fit gap-2 px-4 py-2.5 bg-[#BE123C] rounded-md">
                   <svg

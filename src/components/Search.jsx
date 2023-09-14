@@ -50,7 +50,7 @@ const Search = () => {
           <div
             className={`${
               loading ? `h-fit` : `h-[25rem]`
-            } bg-white  sm:hidden md:block rounded-md w-full absolute p-1 my-2 flex flex-col gap-2 overflow-scroll`}
+            } bg-white  sm:hidden md:block rounded-md w-full absolute p-1 my-2 flex flex-col gap-2 overflow-y-scroll`}
           >
             {loading ? (
               <Loading />
